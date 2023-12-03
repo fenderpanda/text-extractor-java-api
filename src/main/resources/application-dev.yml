@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/<YOUR DB NAME>?useSSL=false
+    username: <YOUR DB USERNAME>
+    password: <YOUR DB PASSWORD>
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+app:
+  executor:
+    corePoolSize: 2
+    maximumPoolSize: 2
+    blockingQueueCapacity: 1
+  image-magick:
+    command: magick convert
+    execution-time-limit: 120
+  directory:
+    tessdata: <YOUR PATH TO TESSDATA>
+    uploads: <YOUR PATH TO FOLDER UPLOADS>
